@@ -8,7 +8,6 @@ Nous avons construit le socle de fichiers
 Nous avons créé le fichier questions.js et game.js, et nous avons associé les deux avec les fonctions import() et export()
 Nous avons créé en HTML un template à remplacer par des intégrations javascript
 Nous avons rendu la première question du questionnaire dynamique
-
 ## 24/06/25
 
 Nous avons rendu fonctionnel le bouton "suivant", qui affiche les pages suivantes
