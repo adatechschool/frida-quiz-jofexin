@@ -20,17 +20,15 @@ function loadQuestion() { // Fonction pour afficher une question basée sur l'in
     console.log(answerButtons); // answerButtons est un tableau
     for (const clickedButton of answerButtons) { // on crée une boucle qui isole les options
         clickedButton.addEventListener("click", (event) => {
-        //console.log('debug event', event);
-        console.log('debug clickedButton', answerButtons[clickedButton]);
-        if (answerButtons[clickedButton] === quiz_frida_kahlo.questions[currentQuestionIndex].correct_answer) { //non fonctionnel
+        console.log('debug event', event.target.innerHTML);
+        if (aevent.target.innerHTML === quiz_frida_kahlo.questions[currentQuestionIndex].correct_answer) { //non fonctionnel
             clickedButton.style.backgroundColor = "lightgreen";
         }
-    })
-    }
-    ;
+    });
+    };
 };
 
-loadQuestion() // on execute la fonction
+loadQuestion(); // on execute la fonction
 
 nextButton.addEventListener("click", () => {
     currentQuestionIndex += 1;//l'action click ajoute 1 à la page actuelle
