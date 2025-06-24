@@ -18,10 +18,11 @@ function loadQuestion() { // Fonction pour afficher une question basée sur l'in
     }; // la boucle fait apparaitre 4 éléments, à chaque currentQuestionIndex
 };
 loadQuestion()
-nextButton.addEventListener("click", () => {
-    currentQuestionIndex += 1;
+nextButton.addEventListener("click", () => { 
+    currentQuestionIndex += 1;//l'action click ajoute 1 à la page actuelle
     // console.log(currentQuestionIndex);
-    loadQuestion(); //on appelle la fonction pour l'executer
+    loadQuestion(); //on appelle la fonction pour l'executer sinon l'affichage s'actualise pas
+    if (currentQuestionIndex===quiz_frida_kahlo.questions.length-1){
+        nextButton.style.display = "none";
+    };
 });
-
-
