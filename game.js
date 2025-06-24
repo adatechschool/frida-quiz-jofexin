@@ -8,23 +8,21 @@ const nextButton = document.querySelector("#nextButton");
 
 //parametres de base de nos fonctions
 let currentQuestionIndex = 0; // permet d'afficher la question et les boutons 0 au round 0
-const currentQuestionPage = quiz_frida_kahlo.questions[currentQuestionIndex];
-//const firstQuestion = quiz_frida_kahlo.questions[0].text;
 
 //déclaration des fonctions
-
-
-nextButton.addEventListener("click", () => {
-    currentQuestionIndex += 1;
+function loadQuestion() { // Fonction pour afficher une question basée sur l'index actuel
+    questionText.innerHTML = `<h2>${quiz_frida_kahlo.questions[currentQuestionIndex].text}</h2>`; // on fait apparaitre l'intitulé de question, variant à chaque currentQuestionIndex
+    options.innerHTML = '';// Vider le conteneur des options
+    for (const item of quiz_frida_kahlo.questions[currentQuestionIndex].options) {
+        options.innerHTML += `<button>${item}</button>`;
+    }; // la boucle fait apparaitre 4 éléments, à chaque currentQuestionIndex
+};
+loadQuestion()
+nextButton.addEventListener("click", () => { 
+    currentQuestionIndex += 1;//l'action click ajoute 1 à la page actuelle
+    // console.log(currentQuestionIndex);
+    loadQuestion(); //on appelle la fonction pour l'executer sinon l'affichage s'actualise pas
+    if (currentQuestionIndex===quiz_frida_kahlo.questions.length-1){
+        nextButton.style.display = "none";
+    };
 });
-
-// function loadQuestion() { // Fonction pour afficher une question basée sur l'index actuel
-//     options.innerHTML = '';// Vider le conteneur des options
-//     questionText.innerHTML = `<h2>${currentQuestionPage.text}</h2>`; // on fait apparaitre l'intitulé de question, variant à chaque currentQuestionIndex
-//     for (const item of currentQuestionPage.options) {
-//         options.innerHTML += `<button>${item}</button>`;
-//     }; // la boucle fait apparaitre 4 éléments, à chaque currentQuestionIndex
-// };
-
-// loadQuestion(); //on appelle la fonction pour l'executer
-console.log(currentQuestionIndex);
