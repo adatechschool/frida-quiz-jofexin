@@ -1,3 +1,7 @@
 #nextButton{
     display: inline;
 }
+
+.answerButtons {
+    background-color: lightgreen;
+}
