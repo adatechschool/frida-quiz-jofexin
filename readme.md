@@ -9,3 +9,5 @@ Nous avons rendu la première question du questionnaire dynamique\
 ## 24/06/25
 Nous avons rendu fonctionnel le bouton "suivant", qui affiche les pages suivantes\
 Nous avons paramétré la display du bouton suivant pour qu'il disparaisse une fois arrivé au bout du tableau\
+Nous avons commencé à travailler sur la mise en couleur des boutons\
+Nous paramétré les boutons de réponses pour que la bonne réponse change de couleur de background\
