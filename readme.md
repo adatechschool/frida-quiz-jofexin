@@ -16,3 +16,4 @@ Nous avons paramétré l'affichage en couleur des mauvaises réponses\
 Nous avons créé le bouton "rejouer"\
 Nous avons paramétré l'affichage du bouton "rejouer" qui est visible uniquement à la dernière page\
 Nous avons fait en sorte que le score se réinitialise quand l'utilisateur clique sur "rejouer"\
+Nous avons désactivé le bouton suivant et rejouer avant une sélection de réponse et les avons réactivés après\

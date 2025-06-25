@@ -21,12 +21,15 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
     }; //la boucle fait apparaitre 4 éléments, à chaque currentQuestionIndex
     //a2. on modifie l'affichage en fonction de la réponse choisie.
     const answerButtons = document.querySelectorAll(".answerButtons");
+    nextButton.disabled = true;
+    replayButton.disabled = true;
     for (const clickedButton of answerButtons) { //on crée une boucle qui isole les options
         clickedButton.addEventListener("click", (event) => {
             for (const clickedButton of answerButtons) {
                 clickedButton.disabled = true;
             };
-            
+            nextButton.disabled=false; //on réactive le bouton suivant après un click sur les réponses
+            replayButton.disabled=false;
             if (event.target.innerHTML === quiz_frida_kahlo.questions[currentQuestionIndex].correct_answer) {
                 clickedButton.style.backgroundColor = "lightgreen";
                 score += 1;
