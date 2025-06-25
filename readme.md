@@ -11,3 +11,8 @@ Nous avons rendu fonctionnel le bouton "suivant", qui affiche les pages suivante
 Nous avons paramétré la display du bouton suivant pour qu'il disparaisse une fois arrivé au bout du tableau\
 Nous avons commencé à travailler sur la mise en couleur des boutons\
 Nous paramétré les boutons de réponses pour que la bonne réponse change de couleur de background\
+## 25/06/25
+Nous avons paramétré l'affichage en couleur des mauvaises réponses\
+Nous avons créé le bouton "rejouer"\
+Nous avons paramétré l'affichage du bouton "rejouer" qui est visible uniquement à la dernière page\
+Nous avons fait en sorte que le score se réinitialise quand l'utilisateur clique sur "rejouer"\
