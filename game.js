@@ -23,12 +23,15 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
     const answerButtons = document.querySelectorAll(".answerButtons");
     for (const clickedButton of answerButtons) { //on crée une boucle qui isole les options
         clickedButton.addEventListener("click", (event) => {
-            console.log('debug event', event.target.innerHTML);
+            for (const clickedButton of answerButtons) {
+                clickedButton.disabled = true;
+            };
+            
             if (event.target.innerHTML === quiz_frida_kahlo.questions[currentQuestionIndex].correct_answer) {
                 clickedButton.style.backgroundColor = "lightgreen";
                 score += 1;
                 showScore.innerHTML = score;
-            } else { clickedButton.style.backgroundColor = "lightpink"; }
+            } else { clickedButton.style.backgroundColor = "lightpink"; };
         });
     };
 };
