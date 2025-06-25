@@ -2,6 +2,10 @@
     display: inline;
 }
 
+#replayButton {
+    display : none;
+}
+
 .answerButtons {
-    background-color: pink;
+    background-color: white;
 }
