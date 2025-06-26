@@ -17,3 +17,4 @@ Nous avons créé le bouton "rejouer"\
 Nous avons paramétré l'affichage du bouton "rejouer" qui est visible uniquement à la dernière page\
 Nous avons fait en sorte que le score se réinitialise quand l'utilisateur clique sur "rejouer"\
 Nous avons désactivé le bouton suivant et rejouer avant une sélection de réponse et les avons réactivés après\
+Nous avons essayé de créer une page score qui ne s'affiche que quand on a cliqué sur le bouton "afficher le score" (en cours de travail)\

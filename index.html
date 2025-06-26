@@ -9,14 +9,19 @@
 <body>
     <div>
         <button id="nextButton">Suivant</button>
-        <button id="replayButton">Rejouer</button>
-        Score : <span id="showScore"></span>
+        <button id="scoreButton">Afficher le score</button>
     </div>
     <h1>Quiz Frida Kahlo</h1>
     <div id="quizContainer">
         <div id="questionText"></div>
         <div class="options">
         </div>
+    </div>
+    <div id="finalPage">
+        <h2>Voici votre score : </h2>
+        <span id="showScore"></span>
+        <p id="comment"></p>
+        <button id="replayButton">Rejouer</button>
     </div>
     <script type="module" src="game.js"></script>
 </body>

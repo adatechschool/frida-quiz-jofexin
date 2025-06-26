@@ -4,13 +4,16 @@ import { quiz_frida_kahlo } from './questions.js'; //nous avons relié ce fichie
 const questionText = document.querySelector("#questionText");
 const options = document.querySelector(".options");
 const nextButton = document.querySelector("#nextButton");
-const replayButton = document.querySelector("#replayButton");
+const scoreButton = document.querySelector("#scoreButton");
 const showScore = document.querySelector("#showScore");
+const replayButton = document.querySelector("#replayButton");
+const finalPage = document.querySelector("#finalPage");
+const quizContainer = document.querySelector("#quizContainer")
 
 //parametres de base de nos fonctions
 let currentQuestionIndex = 0; //permet d'afficher la question et les boutons 0 au round 0
 let score = 0;
-showScore.innerHTML = score;
+showScore.innerHTML = `${score}/${quiz_frida_kahlo.questions.length}`;
 //1. déclaration des fonctions
 //a. afficher les réponses
 function loadQuestion() { //Fonction pour afficher une question basée sur l'index actuel
@@ -22,14 +25,14 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
     //a2. on modifie l'affichage en fonction de la réponse choisie.
     const answerButtons = document.querySelectorAll(".answerButtons");
     nextButton.disabled = true;
-    replayButton.disabled = true;
+    scoreButton.disabled = true;
     for (const clickedButton of answerButtons) { //on crée une boucle qui isole les options
         clickedButton.addEventListener("click", (event) => {
             for (const clickedButton of answerButtons) {
                 clickedButton.disabled = true;
             };
             nextButton.disabled=false; //on réactive le bouton suivant après un click sur les réponses
-            replayButton.disabled=false;
+            scoreButton.disabled=false;
             if (event.target.innerHTML === quiz_frida_kahlo.questions[currentQuestionIndex].correct_answer) {
                 clickedButton.style.backgroundColor = "lightgreen";
                 score += 1;
@@ -42,22 +45,29 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
 loadQuestion(); //on execute la fonction
 
 
-//b. bouton "suivant"
+//bouton "suivant"
 nextButton.addEventListener("click", () => {
     currentQuestionIndex += 1; //l'action click ajoute 1 à la page actuelle
     loadQuestion(); //on appelle la fonction pour l'executer sinon l'affichage s'actualise pas
     if (currentQuestionIndex === quiz_frida_kahlo.questions.length - 1) {
         nextButton.style.display = "none";
-        replayButton.style.display = "inline";
-    }; //si le compteur atteint la derniière page, le bouton "suivant" disparait
+        scoreButton.style.display = "inline";
+    }; //si le compteur atteint la dernière page, le bouton "suivant" disparait
 });
 
-//c. bouton "rejouer"
-replayButton.addEventListener("click", () => {
-    currentQuestionIndex = 0;
-    loadQuestion();
-    replayButton.style.display = "none";
-    nextButton.style.display = "inline";
-    score = 0;
-    showScore.innerHTML = score;
-})
+//bouton de score
+scoreButton.addEventListener("click", () => {
+    quizContainer.style.display = "none";
+    finalPage.style.display = "inline";
+    
+});
+
+//bouton rejouer
+replayButton.addEventListener("click",()=>{
+    // scoreButton.style.display = "none";
+    // currentQuestionIndex = 0; // /!\ à déplacer dans replayButton
+    // loadQuestion();
+    // score = 0;
+    // nextButton.style.display = "inline";
+    // showScore.innerHTML = score;
+});
