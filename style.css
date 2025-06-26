@@ -1,15 +1,30 @@
-#nextButton{
+body {
+    background-image: url(pictures/background.jpeg);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+#nextButton {
     display: inline;
 }
 
 #scoreButton {
-    display : none;
+    display: none;
 }
 
 #finalPage {
-    display : none;
+    display: none;
 }
 
 #quizContainer {
-    display: inline;
+    display: block;
+    padding: 10px;
+    position: absolute;
+    text-align: center;
+    margin: center;
+    width: 80%;
+    background-color: white;
 }
