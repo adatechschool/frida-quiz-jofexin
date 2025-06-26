@@ -18,3 +18,8 @@ Nous avons paramétré l'affichage du bouton "rejouer" qui est visible uniquemen
 Nous avons fait en sorte que le score se réinitialise quand l'utilisateur clique sur "rejouer"\
 Nous avons désactivé le bouton suivant et rejouer avant une sélection de réponse et les avons réactivés après\
 Nous avons essayé de créer une page score qui ne s'affiche que quand on a cliqué sur le bouton "afficher le score" (en cours de travail)\
+##  26/06/25
+On a réparé la page de score
+On a réparé le bouton rejouer
+On a rendu le bouton "afficher le score" visible uniquement après avoir complété le quiz
+On a implémenté un suivi de pages qui indique à quelle étape du quiz on se trouve

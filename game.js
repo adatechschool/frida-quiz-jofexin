@@ -9,16 +9,18 @@ const showScore = document.querySelector("#showScore");
 const replayButton = document.querySelector("#replayButton");
 const finalPage = document.querySelector("#finalPage");
 const quizContainer = document.querySelector("#quizContainer")
+const tracker = document.querySelector("#tracker")
 
 //parametres de base de nos fonctions
-let currentQuestionIndex = 7; //permet d'afficher la question et les boutons 0 au round 0
+let currentQuestionIndex = 0; //permet d'afficher la question et les boutons 0 au round 0
 let score = 0;
-showScore.innerHTML = `${score}/${quiz_frida_kahlo.questions.length}`;
+// showScore.innerHTML = `${score}/${quiz_frida_kahlo.questions.length}`;
 //1. déclaration des fonctions
 //a. afficher les réponses
 function loadQuestion() { //Fonction pour afficher une question basée sur l'index actuel
     questionText.innerHTML = `<h2>${quiz_frida_kahlo.questions[currentQuestionIndex].text}</h2>`; //on fait apparaitre l'intitulé de question, variant à chaque currentQuestionIndex
     options.innerHTML = '';// Vider le conteneur des options
+    tracker.innerHTML = `Page : ${currentQuestionIndex +1} / ${quiz_frida_kahlo.questions.length}`
     for (const item of quiz_frida_kahlo.questions[currentQuestionIndex].options) {
         options.innerHTML += `<button class="answerButtons" >${item}</button>`; //on intègre les boutons dans le conteneur de boutons
     }; //la boucle fait apparaitre 4 éléments, à chaque currentQuestionIndex
@@ -38,7 +40,7 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
             if (event.target.innerHTML === quiz_frida_kahlo.questions[currentQuestionIndex].correct_answer) {
                 clickedButton.style.backgroundColor = "lightgreen";
                 score += 1;
-                showScore.innerHTML = score;
+                showScore.innerHTML = `${score}/${quiz_frida_kahlo.questions.length}`;
             } else { clickedButton.style.backgroundColor = "lightpink"; };
         });
     };
@@ -66,10 +68,13 @@ scoreButton.addEventListener("click", () => {
 
 //bouton rejouer
 replayButton.addEventListener("click", () => {
-    // scoreButton.style.display = "none";
-    // currentQuestionIndex = 0; // /!\ à déplacer dans replayButton
-    // loadQuestion();
-    // score = 0;
-    // nextButton.style.display = "inline";
+    scoreButton.style.display = "none";
+    quizContainer.style.display = "inline";
+    finalPage.style.display = "none";
+    currentQuestionIndex = 0; // /!\ à déplacer dans replayButton
+    score = 0;
+    loadQuestion();
+
+    nextButton.style.display = "inline";
     // showScore.innerHTML = score;
 });
