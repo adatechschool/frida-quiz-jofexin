@@ -11,7 +11,7 @@ const finalPage = document.querySelector("#finalPage");
 const quizContainer = document.querySelector("#quizContainer")
 
 //parametres de base de nos fonctions
-let currentQuestionIndex = 0; //permet d'afficher la question et les boutons 0 au round 0
+let currentQuestionIndex = 7; //permet d'afficher la question et les boutons 0 au round 0
 let score = 0;
 showScore.innerHTML = `${score}/${quiz_frida_kahlo.questions.length}`;
 //1. déclaration des fonctions
@@ -25,14 +25,16 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
     //a2. on modifie l'affichage en fonction de la réponse choisie.
     const answerButtons = document.querySelectorAll(".answerButtons");
     nextButton.disabled = true;
-    scoreButton.disabled = true;
+
     for (const clickedButton of answerButtons) { //on crée une boucle qui isole les options
         clickedButton.addEventListener("click", (event) => {
             for (const clickedButton of answerButtons) {
                 clickedButton.disabled = true;
             };
-            nextButton.disabled=false; //on réactive le bouton suivant après un click sur les réponses
-            scoreButton.disabled=false;
+            nextButton.disabled = false; //on réactive le bouton suivant après un click sur les réponse
+            if (currentQuestionIndex === quiz_frida_kahlo.questions.length - 1) {
+                scoreButton.style.display = "inline";
+            }
             if (event.target.innerHTML === quiz_frida_kahlo.questions[currentQuestionIndex].correct_answer) {
                 clickedButton.style.backgroundColor = "lightgreen";
                 score += 1;
@@ -51,7 +53,7 @@ nextButton.addEventListener("click", () => {
     loadQuestion(); //on appelle la fonction pour l'executer sinon l'affichage s'actualise pas
     if (currentQuestionIndex === quiz_frida_kahlo.questions.length - 1) {
         nextButton.style.display = "none";
-        scoreButton.style.display = "inline";
+        //scoreButton.style.display = "inline";
     }; //si le compteur atteint la dernière page, le bouton "suivant" disparait
 });
 
@@ -59,11 +61,11 @@ nextButton.addEventListener("click", () => {
 scoreButton.addEventListener("click", () => {
     quizContainer.style.display = "none";
     finalPage.style.display = "inline";
-    
+
 });
 
 //bouton rejouer
-replayButton.addEventListener("click",()=>{
+replayButton.addEventListener("click", () => {
     // scoreButton.style.display = "none";
     // currentQuestionIndex = 0; // /!\ à déplacer dans replayButton
     // loadQuestion();
