@@ -69,7 +69,7 @@ scoreButton.addEventListener("click", () => {
 //bouton rejouer
 replayButton.addEventListener("click", () => {
     scoreButton.style.display = "none";
-    quizContainer.style.display = "inline";
+    quizContainer.style.display = "block";
     finalPage.style.display = "none";
     currentQuestionIndex = 0; // /!\ à déplacer dans replayButton
     score = 0;

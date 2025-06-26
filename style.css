@@ -7,6 +7,17 @@ body {
     text-align: center;
 }
 
+#frontPage{
+    object-position: 50%;
+    padding: 10px;
+    position: absolute;
+    text-align: center;
+    margin: 25%;
+    width: 70%;
+    background-color: white;
+    border-radius: 15px;
+}
+
 #nextButton {
     display: inline;
 }
@@ -21,10 +32,4 @@ body {
 
 #quizContainer {
     display: block;
-    padding: 10px;
-    position: absolute;
-    text-align: center;
-    margin: center;
-    width: 80%;
-    background-color: white;
 }
