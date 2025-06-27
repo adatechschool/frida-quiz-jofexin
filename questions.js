@@ -8,7 +8,8 @@ export const quiz_frida_kahlo = {
                 "16 juillet 1917 à Coyàn",
                 "Aucune de ces réponses"
             ],
-            correct_answer: "Aucune de ces réponses"
+            correct_answer: "Aucune de ces réponses",
+            illustration: "/pictures/question1.jpeg"
         },
         {
             text: "Quel est le nom complet de Frida Kahlo ?",
@@ -18,7 +19,8 @@ export const quiz_frida_kahlo = {
                 "Matilde Frida Carmen Kahlo",
                 "Magdalena Frida Carmen Kahlo"
             ],
-            correct_answer: "Magdalena Frida Carmen Kahlo"
+            correct_answer: "Magdalena Frida Carmen Kahlo",
+            illustration: "/pictures/question2.jpeg"
         },
         {
             text: "De quelles maladies a-t-elle été victime à l’âge de 6 ans ?",
@@ -28,7 +30,8 @@ export const quiz_frida_kahlo = {
                 "La poliliomyélite et spina bifida",
                 "Aucune de ces réponses"
             ],
-            correct_answer: "La poliomyélite et le spina bifida"
+            correct_answer: "La poliomyélite et le spina bifida",
+            illustration: "/pictures/question3.jpeg"
         },
         {
             text: "À l'âge de 18 ans, Frida Kahlo est victime d'un très grave accident. Dans quel type de véhicule se trouvait elle ?",
@@ -38,7 +41,8 @@ export const quiz_frida_kahlo = {
                 "Une voiture",
                 "Une grue"
             ],
-            correct_answer: "Un bus"
+            correct_answer: "Un bus",
+            illustration: "/pictures/question4.jpeg"
         },
         {
             text: "À l'âge de 22 ans, Frida Kahlo épouse un peintre mexicain déjà célèbre. De qui s'agit-il ?",
@@ -48,7 +52,8 @@ export const quiz_frida_kahlo = {
                 "Diego Rivera",
                 "David Alfaro Siqueiros"
             ],
-            correct_answer: "Diego Rivera"
+            correct_answer: "Diego Rivera",
+            illustration: "/pictures/question5.jpeg"
         },
         {
             text: "Si elle souffrit beaucoup de l'infidélité de Diego avec sa propre sœur, Frida eu, elle aussi, des aventures. On lui attribue une aventure avec Léon Trotski et ... ?",
@@ -58,7 +63,8 @@ export const quiz_frida_kahlo = {
                 "Joséphine Baker",
                 "Tina Modotti"
             ],
-            correct_answer: "Joséphine Baker"
+            correct_answer: "Joséphine Baker",
+            illustration: "/pictures/question6.jpeg"
         },
         {
             text: "Combien d’autoportraits a-t-elle peints ?",
@@ -68,7 +74,8 @@ export const quiz_frida_kahlo = {
                 "143",
                 "Aucune de ces réponses"
             ],
-            correct_answer: "55"
+            correct_answer: "55",
+            illustration: "/pictures/question7.jpeg"
         },
         {
             text: "Parmi ces choix, quel thème est fréquemment abordé dans les peintures de Frida Kahlo?",
@@ -78,7 +85,8 @@ export const quiz_frida_kahlo = {
                 "La spiritualité orientale",
                 "L'identité, la douleur et la féminité"
             ],
-            correct_answer: "L'identité, la douleur et la féminité"
+            correct_answer: "L'identité, la douleur et la féminité",
+            illustration: "/pictures/question8.jpeg"
         },
         {
             text: "Quelle est la dernière œuvre qu'achèvera Frida Kahlo, à peine quelques jours avant sa mort en 1954 ?",
@@ -88,7 +96,8 @@ export const quiz_frida_kahlo = {
                 "Viva la Vida, Watermelons",
                 "Memory the heart"
             ],
-            correct_answer: "Viva la Vida, Watermelons"
+            correct_answer: "Viva la Vida, Watermelons",
+            illustration: "/pictures/question9.jpeg"
         }
     ]
 };
