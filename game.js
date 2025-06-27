@@ -21,7 +21,7 @@ let score = 0;
 function loadQuestion() { //Fonction pour afficher une question basée sur l'index actuel
     questionText.innerHTML = `<h2>${quiz_frida_kahlo.questions[currentQuestionIndex].text}</h2>`; //on fait apparaitre l'intitulé de question, variant à chaque currentQuestionIndex
     options.innerHTML = '';// Vider le conteneur des options
-    tracker.innerHTML = `Page : ${currentQuestionIndex +1} / ${quiz_frida_kahlo.questions.length}`
+    tracker.innerHTML = `Question : ${currentQuestionIndex +1} / ${quiz_frida_kahlo.questions.length}`
     illustrationContainer.innerHTML = `<img class="image" src="${quiz_frida_kahlo.questions[currentQuestionIndex].image}" alt="illustration"/>`
     for (const item of quiz_frida_kahlo.questions[currentQuestionIndex].options) {
         options.innerHTML += `<button class="answerButtons" >${item}</button>`; //on intègre les boutons dans le conteneur de boutons
@@ -73,6 +73,7 @@ scoreButton.addEventListener("click", () => {
 replayButton.addEventListener("click", () => {
     scoreButton.style.display = "none";
     quizContainer.style.display = "block";
+    illustrationContainer.style.display = "flex";
     finalPage.style.display = "none";
     currentQuestionIndex = 0; // /!\ à déplacer dans replayButton
     score = 0;
