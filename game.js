@@ -10,7 +10,8 @@ const replayButton = document.querySelector("#replayButton");
 const finalPage = document.querySelector("#finalPage");
 const quizContainer = document.querySelector("#quizContainer")
 const tracker = document.querySelector("#tracker")
-
+const illustrationContainer = document.querySelector("#illustrationContainer")
+const illustration = document.querySelector("#illustration")
 //parametres de base de nos fonctions
 let currentQuestionIndex = 0; //permet d'afficher la question et les boutons 0 au round 0
 let score = 0;
@@ -21,6 +22,7 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
     questionText.innerHTML = `<h2>${quiz_frida_kahlo.questions[currentQuestionIndex].text}</h2>`; //on fait apparaitre l'intitulé de question, variant à chaque currentQuestionIndex
     options.innerHTML = '';// Vider le conteneur des options
     tracker.innerHTML = `Page : ${currentQuestionIndex +1} / ${quiz_frida_kahlo.questions.length}`
+    illustration.innerHTML = `<img class="image" src="${quiz_frida_kahlo.questions[currentQuestionIndex].image}" alt="illustration"/>`
     for (const item of quiz_frida_kahlo.questions[currentQuestionIndex].options) {
         options.innerHTML += `<button class="answerButtons" >${item}</button>`; //on intègre les boutons dans le conteneur de boutons
     }; //la boucle fait apparaitre 4 éléments, à chaque currentQuestionIndex
@@ -63,6 +65,7 @@ nextButton.addEventListener("click", () => {
 scoreButton.addEventListener("click", () => {
     quizContainer.style.display = "none";
     finalPage.style.display = "inline";
+    illustrationContainer.style.display="none";
 
 });
 

@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <div id="backgroundImage"></div>
     <div id="frontPage">
         <div id="quizContainer">
             <h1>Quiz Frida Kahlo</h1>
@@ -17,15 +18,16 @@
             <div class= "answserButtons"></div>
             <button id="nextButton">Suivant</button>
             <button id="scoreButton">Afficher le score</button>
-            <p id="tracker"> placeholder</p>
+            <p id="tracker"></p>
         </div>
-        <div id="illustration"></div>
-    </div>
-    <div id="finalPage">
-        <h2>Voici votre score : </h2>
-        <span id="showScore"></span>
-        <p id="comment"></p>
-        <button id="replayButton">Rejouer</button>
+        <div id="illustrationContainer"></div>
+            <div id="illustration"></div>
+        <div id="finalPage">
+            <h2>Voici votre score : </h2>
+            <span id="showScore"></span>
+            <p id="comment"></p>
+            <button id="replayButton">Rejouer</button>
+        </div>
     </div>
     <script type="module" src="game.js"></script>
 </body>

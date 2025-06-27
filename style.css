@@ -1,23 +1,71 @@
 body {
-    background-image: url(pictures/background.jpeg);
-    background-repeat: no-repeat;
-    background-position-x: center;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
     height: 100%;
     width: 100%;
-    text-align: center;
 }
-
-#frontPage{
-    object-position: 50%;
-    padding: 10px;
-    position: absolute;
-    text-align: center;
-    margin: 25%;
-    width: 70%;
+#backgroundImage {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 0;
+    display: block;
+    background-image: url(pictures/background.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 105%;
+    width: 105%;
+    filter: blur(1.5px);
+}
+#frontPage {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    width: 50%;
+    height: 50%;
     background-color: white;
     border-radius: 15px;
+    z-index: 2;
+    padding: 25px;
+    align-self: center;
 }
+#quizContainer {
+    display: block;
+    text-align: center;
+    background-color: aqua;
+    z-index: 3;
+    height: 100%;
+    width: 50%;
+}
+.answerButtons{
+    border: 2px solid #0a0a0a;
+    background-color: rgb(244, 148, 148);
+    border-radius: 5px;
+    padding: 3px 5px;
+}
+#illustrationContainer {
+    display: flex;
 
+    position: relative;
+    background-color: darksalmon;
+    z-index: 3;
+    height: 100%;
+    width: 50%;
+    align-items: center;
+}
+.image {
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 100%;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
 .options{
     display: flex;
     flex-direction: column;
@@ -27,29 +75,19 @@ body {
     width: 134px;
     margin: auto;
     
-    }
-
-.answerButtons{
-
-    border: 2px solid #0a0a0a;
-    background-color: rgb(244, 148, 148);
-    border-radius: 5px;
-    padding: 3px 5px;
 }
-
-
+#finalPage {
+    display: none;
+    text-align: center;
+    background-color: coral;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+}
 #nextButton {
     display: inline;
 }
 
 #scoreButton {
     display: none;
-}
-
-#finalPage {
-    display: none;
-}
-
-#quizContainer {
-    display: block;
 }
