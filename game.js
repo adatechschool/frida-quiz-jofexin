@@ -1,4 +1,5 @@
 import { quiz_frida_kahlo } from './questions.js'; //nous avons relié ce fichier avec questions.js
+import { commentaires } from '../comments.js';
 
 //selection des elements HTML //on fait correspondre les variables à leurs emplacements HTML
 const questionText = document.querySelector("#questionText");
@@ -8,9 +9,10 @@ const scoreButton = document.querySelector("#scoreButton");
 const showScore = document.querySelector("#showScore");
 const replayButton = document.querySelector("#replayButton");
 const finalPage = document.querySelector("#finalPage");
-const quizContainer = document.querySelector("#quizContainer")
-const tracker = document.querySelector("#tracker")
-const illustrationContainer = document.querySelector("#illustrationContainer")
+const quizContainer = document.querySelector("#quizContainer");
+const tracker = document.querySelector("#tracker");
+const illustrationContainer = document.querySelector("#illustrationContainer");
+const comment = document.querySelector("#comment");
 
 //parametres de base de nos fonctions
 let currentQuestionIndex = 0; //permet d'afficher la question et les boutons 0 au round 0
@@ -42,7 +44,7 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
             if (event.target.innerHTML === quiz_frida_kahlo.questions[currentQuestionIndex].correct_answer) {
                 clickedButton.style.backgroundColor = "lightgreen";
                 score += 1;
-                showScore.innerHTML = `${score}/${quiz_frida_kahlo.questions.length}`;
+                //showScore.innerHTML = `${score}/${quiz_frida_kahlo.questions.length}`;
             } else {
                 clickedButton.style.backgroundColor = "lightpink";
                 for (const button of answerButtons) {
@@ -64,7 +66,6 @@ nextButton.addEventListener("click", () => {
     loadQuestion(); //on appelle la fonction pour l'executer sinon l'affichage s'actualise pas
     if (currentQuestionIndex === quiz_frida_kahlo.questions.length - 1) {
         nextButton.style.display = "none";
-        //scoreButton.style.display = "inline";
     }; //si le compteur atteint la dernière page, le bouton "suivant" disparait
 });
 
@@ -73,9 +74,17 @@ scoreButton.addEventListener("click", () => {
     quizContainer.style.display = "none";
     finalPage.style.display = "inline";
     illustrationContainer.style.display = "none";
-
+    showScore.innerHTML = `${Math.round(score * 100 / quiz_frida_kahlo.questions.length)}%`; //affiche les %ages de réussite dans finalPage
+    if (Math.round(score * 6 / quiz_frida_kahlo.questions.length) <= 2) {
+        comment.innerHTML = commentaires.comments[0];
+    } else if (Math.round(score * 6 / quiz_frida_kahlo.questions.length) <= 4) {
+        comment.innerHTML = commentaires.comments[1];
+    } else if (Math.round(score * 6 / quiz_frida_kahlo.questions.length) <= 5) {
+        comment.innerHTML = commentaires.comments[2];
+    } else if (Math.round(score * 6 / quiz_frida_kahlo.questions.length) === 6) {
+        comment.innerHTML = commentaires.comments[3];
+    };
 });
-
 //bouton rejouer
 replayButton.addEventListener("click", () => {
     scoreButton.style.display = "none";
@@ -85,7 +94,5 @@ replayButton.addEventListener("click", () => {
     currentQuestionIndex = 0; // /!\ à déplacer dans replayButton
     score = 0;
     loadQuestion();
-
     nextButton.style.display = "inline";
-    // showScore.innerHTML = score;
 });
