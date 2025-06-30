@@ -25,3 +25,7 @@ On a rendu le bouton "afficher le score" visible uniquement après avoir complé
 On a implémenté un suivi de pages qui indique à quelle étape du quiz on se trouve\
 ## 27/06/25
 On a merge trois versions du CSS, dans lesquelles ont avait travaillé sur l'apparence des boutons, l'intégration d'illustrations et la mise en page générale\
+## 30/06/2025
+On a mis à jour les réactions de couleur dans le cas où la mauvaise réponse est sélectionnée\
+On a modifié l'affichage du score dans finalPage pour indiquer des %ages de réussite, et un commentaire personnalisé\
+On a actualisé le style des boutons\
