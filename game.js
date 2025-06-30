@@ -28,9 +28,23 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
     progressTracker.value =currentQuestionIndex + 1; //on actualise le "progress bar" en attribuant des nouvalles valeur aux .value et .max
     progressTracker.max = quiz_frida_kahlo.questions.length;
     illustrationContainer.innerHTML = `<img class="image" src="${quiz_frida_kahlo.questions[currentQuestionIndex].image}" alt="illustration"/>`
+
+    //fonction pour mélanger le tableau des réponses
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]]; //échange les éléments
+        }
+    }
+
+    shuffleArray(quiz_frida_kahlo.questions[currentQuestionIndex].options);// mélange le tableau des options
+
+
+    //affiche les boutons dans l'ordre aléatoire
     for (const item of quiz_frida_kahlo.questions[currentQuestionIndex].options) {
-        options.innerHTML += `<button class="answerButtons" >${item}</button>`; //on intègre les boutons dans le conteneur de boutons
-    }; //la boucle fait apparaitre 4 éléments, à chaque currentQuestionIndex
+        options.innerHTML += `<button class="answerButtons">${item}</button>`;//on intègre les boutons dans le conteneur de boutons
+    } //la boucle fait apparaitre 4 éléments, à chaque currentQuestionIndex
+
     //a2. on modifie l'affichage en fonction de la réponse choisie.
     const answerButtons = document.querySelectorAll(".answerButtons");
     nextButton.disabled = true;
