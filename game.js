@@ -17,6 +17,7 @@ const comment = document.querySelector("#comment");
 //parametres de base de nos fonctions
 let currentQuestionIndex = 0; //permet d'afficher la question et les boutons 0 au round 0
 let score = 0;
+
 // showScore.innerHTML = `${score}/${quiz_frida_kahlo.questions.length}`;
 //1. déclaration des fonctions
 //a. afficher les réponses
@@ -55,9 +56,29 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
             };
         });
     };
+      updateProgressBar();
 };
 
+function updateProgressBar() {
+    const totalQuestions = quiz_frida_kahlo.questions.length;
+    const progressPercent = ((currentQuestionIndex + 1) / totalQuestions) * 100;
+
+    const progressBar = document.getElementById("progress-bar");
+    const progressText = document.getElementById("progress-text");
+    
+    if (progressBar) {
+        progressBar.style.width = progressPercent + "%";
+    }
+    
+    if (progressText) {
+        progressText.textContent = `Question ${currentQuestionIndex + 1} sur ${totalQuestions}`;
+    }
+}
+ 
+
 loadQuestion(); //on execute la fonction
+
+
 
 
 //bouton "suivant"
@@ -96,3 +117,5 @@ replayButton.addEventListener("click", () => {
     loadQuestion();
     nextButton.style.display = "inline";
 });
+
+
