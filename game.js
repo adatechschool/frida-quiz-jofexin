@@ -1,5 +1,5 @@
 import { quiz_frida_kahlo } from './questions.js'; //nous avons relié ce fichier avec questions.js
-import { commentaires } from '../comments.js';
+import { commentaires } from './comments.js';
 
 //selection des elements HTML //on fait correspondre les variables à leurs emplacements HTML
 const questionText = document.querySelector("#questionText");
