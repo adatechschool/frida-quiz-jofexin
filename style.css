@@ -1,0 +1,90 @@
+body {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+#backgroundImage {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 0;
+    display: block;
+    background-image: url(pictures/background.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 105%;
+    width: 105%;
+    filter: blur(1.5px);
+}
+#frontPage {
+    margin-top: 5%;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    width: 50%;
+    height: 70vh;
+    background-color: white;
+    border-radius: 15px;
+    z-index: 2;
+    padding: 25px;
+    align-self: center;
+}
+#quizContainer {
+    display: block;
+    text-align: center;
+    z-index: 3;
+    height: 100%;
+    width: 50%;
+}
+.answerButtons{
+    width:300px;
+    height : 30px;
+    border: 0px;
+    background-color: lightgray;
+    border-radius: 5px;
+    padding: 3px 5px;
+    align-self: center;
+}
+#illustrationContainer {
+    display: flex;
+    z-index: 3;
+    height: 100%;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+
+}
+.image {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.options{
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+    margin-top: 20px;
+    padding: 10px 10px;
+    width: 134px;
+    margin: auto;
+    
+}
+#finalPage {
+    display: none;
+    text-align: center;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+}
+#nextButton {
+    display: inline;
+}
+
+#scoreButton {
+    display: none;
+}
