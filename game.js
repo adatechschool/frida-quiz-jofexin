@@ -21,7 +21,7 @@ let score = 0;
 function loadQuestion() { //Fonction pour afficher une question basée sur l'index actuel
     questionText.innerHTML = `<h2>${quiz_frida_kahlo.questions[currentQuestionIndex].text}</h2>`; //on fait apparaitre l'intitulé de question, variant à chaque currentQuestionIndex
     options.innerHTML = '';// Vider le conteneur des options
-    tracker.innerHTML = `Question : ${currentQuestionIndex +1} / ${quiz_frida_kahlo.questions.length}`
+    tracker.innerHTML = `Question : ${currentQuestionIndex + 1} / ${quiz_frida_kahlo.questions.length}`
     illustrationContainer.innerHTML = `<img class="image" src="${quiz_frida_kahlo.questions[currentQuestionIndex].image}" alt="illustration"/>`
     for (const item of quiz_frida_kahlo.questions[currentQuestionIndex].options) {
         options.innerHTML += `<button class="answerButtons" >${item}</button>`; //on intègre les boutons dans le conteneur de boutons
@@ -43,7 +43,14 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
                 clickedButton.style.backgroundColor = "lightgreen";
                 score += 1;
                 showScore.innerHTML = `${score}/${quiz_frida_kahlo.questions.length}`;
-            } else { clickedButton.style.backgroundColor = "lightpink"; };
+            } else {
+                clickedButton.style.backgroundColor = "lightpink";
+                for (const button of answerButtons) {
+                    if (button.innerHTML === quiz_frida_kahlo.questions[currentQuestionIndex].correct_answer) {
+                        button.style.backgroundColor = "lightgreen";
+                    };
+                }
+            };
         });
     };
 };
@@ -65,7 +72,7 @@ nextButton.addEventListener("click", () => {
 scoreButton.addEventListener("click", () => {
     quizContainer.style.display = "none";
     finalPage.style.display = "inline";
-    illustrationContainer.style.display="none";
+    illustrationContainer.style.display = "none";
 
 });
 
