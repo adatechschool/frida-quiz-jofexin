@@ -26,7 +26,7 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
     tracker.innerHTML = `Question : ${currentQuestionIndex + 1} / ${quiz_frida_kahlo.questions.length}`
     illustrationContainer.innerHTML = `<img class="image" src="${quiz_frida_kahlo.questions[currentQuestionIndex].image}" alt="illustration"/>`
 
-    //fonction pour mélanger un tableau
+    //fonction pour mélanger le tableau des réponses
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));

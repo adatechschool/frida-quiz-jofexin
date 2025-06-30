@@ -29,4 +29,5 @@ On a merge trois versions du CSS, dans lesquelles ont avait travaillé sur l'app
 On a mis à jour les réactions de couleur dans le cas où la mauvaise réponse est sélectionnée\
 On a modifié l'affichage du score dans finalPage pour indiquer des %ages de réussite, et un commentaire personnalisé\
 On a actualisé le style des boutons\
-On a affiché les boutons de réponse de manière aléatoire
+On a affiché les boutons de réponse de manière aléatoire\
+On a modifié le style des boutons activés lorsque la souris les survole

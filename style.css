@@ -49,6 +49,10 @@ body {
     padding: 3px 5px;
     align-self: center;
 }
+.answerButtons:hover:enabled{
+    background-color: black;
+    color: lightgrey;
+}
 #illustrationContainer {
     display: flex;
     z-index: 3;
@@ -80,9 +84,6 @@ body {
     z-index: 3;
     height: 100%;
     width: 100%;
-}
-#nextButton {
-    display: inline;
 }
 
 #scoreButton {
