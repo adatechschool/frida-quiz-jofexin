@@ -25,11 +25,7 @@ let score = 0;
 function loadQuestion() { //Fonction pour afficher une question basée sur l'index actuel
     questionText.innerHTML = `<h2>${quiz_frida_kahlo.questions[currentQuestionIndex].text}</h2>`; //on fait apparaitre l'intitulé de question, variant à chaque currentQuestionIndex
     options.innerHTML = '';// Vider le conteneur des options
-    //tracker.innerHTML = `Question : ${currentQuestionIndex + 1} / ${quiz_frida_kahlo.questions.length}`
-    progressTracker.value =currentQuestionIndex + 1; //on actualise le "progress bar" en attribuant des nouvalles valeur aux .value et .max
-    progressTracker.max = quiz_frida_kahlo.questions.length;
     illustrationContainer.innerHTML = `<img class="image" src="${quiz_frida_kahlo.questions[currentQuestionIndex].image}" alt="illustration"/>`
-
     //fonction pour mélanger le tableau des réponses
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -60,14 +56,14 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
                 scoreButton.style.display = "inline";
             }
             if (event.target.innerHTML === quiz_frida_kahlo.questions[currentQuestionIndex].correct_answer) {
-                clickedButton.style.backgroundColor = "lightgreen";
+                clickedButton.style.backgroundColor = "#4caf50";
                 score += 1;
                 //showScore.innerHTML = `${score}/${quiz_frida_kahlo.questions.length}`;
             } else {
-                clickedButton.style.backgroundColor = "lightpink";
+                clickedButton.style.backgroundColor = "#e0beb5";
                 for (const button of answerButtons) {
                     if (button.innerHTML === quiz_frida_kahlo.questions[currentQuestionIndex].correct_answer) {
-                        button.style.backgroundColor = "lightgreen";
+                        button.style.backgroundColor = "#4caf50";
                     };
                 }
             };
