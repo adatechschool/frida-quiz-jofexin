@@ -88,3 +88,7 @@ body {
 #scoreButton {
     display: none;
 }
+#progressTracker {
+    width: 85%;
+    accent-color: turquoise; 
+}

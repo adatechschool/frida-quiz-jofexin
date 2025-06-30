@@ -11,6 +11,7 @@ const replayButton = document.querySelector("#replayButton");
 const finalPage = document.querySelector("#finalPage");
 const quizContainer = document.querySelector("#quizContainer");
 const tracker = document.querySelector("#tracker");
+const progressTracker = document.querySelector("#progressTracker");
 const illustrationContainer = document.querySelector("#illustrationContainer");
 const comment = document.querySelector("#comment");
 
@@ -23,7 +24,9 @@ let score = 0;
 function loadQuestion() { //Fonction pour afficher une question basée sur l'index actuel
     questionText.innerHTML = `<h2>${quiz_frida_kahlo.questions[currentQuestionIndex].text}</h2>`; //on fait apparaitre l'intitulé de question, variant à chaque currentQuestionIndex
     options.innerHTML = '';// Vider le conteneur des options
-    tracker.innerHTML = `Question : ${currentQuestionIndex + 1} / ${quiz_frida_kahlo.questions.length}`
+    //tracker.innerHTML = `Question : ${currentQuestionIndex + 1} / ${quiz_frida_kahlo.questions.length}`
+    progressTracker.value =currentQuestionIndex + 1; //on actualise le "progress bar" en attribuant des nouvalles valeur aux .value et .max
+    progressTracker.max = quiz_frida_kahlo.questions.length;
     illustrationContainer.innerHTML = `<img class="image" src="${quiz_frida_kahlo.questions[currentQuestionIndex].image}" alt="illustration"/>`
     for (const item of quiz_frida_kahlo.questions[currentQuestionIndex].options) {
         options.innerHTML += `<button class="answerButtons" >${item}</button>`; //on intègre les boutons dans le conteneur de boutons
