@@ -20,36 +20,15 @@ const timerElement = document.getElementById("timer");
 let currentQuestionIndex = 0; //permet d'afficher la question et les boutons 0 au round 0
 let score = 0;
 let sec = 5;
-
-
-
-
 //1. déclaration des fonctions
 //a. afficher les réponses
 function loadQuestion() { //Fonction pour afficher une question basée sur l'index actuel
-<<<<<<< HEAD
 
 
-    questionText.innerHTML = `<h2>${quiz_frida_kahlo.questions[currentQuestionIndex].text}</h2>`; //on fait apparaitre l'intitulé de question, variant à chaque currentQuestionIndex
-    options.innerHTML = '';// Vider le conteneur des options
-    illustrationContainer.innerHTML = `<img class="image" src="${quiz_frida_kahlo.questions[currentQuestionIndex].image}" alt="illustration"/>`
-    //fonction pour mélanger le tableau des réponses
-    function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]]; //échange les éléments
-        }
-    }
-
-    
-    shuffleArray(quiz_frida_kahlo.questions[currentQuestionIndex].options);// mélange le tableau des options
-
-=======
     questionText.innerHTML = `<h3>${quiz_frida_kahlo.questions[currentQuestionIndex].text}</h3>`; //on fait apparaitre l'intitulé de question, variant à chaque currentQuestionIndex
     options.innerHTML = '';// Vider le conteneur des options
     illustrationContainer.innerHTML = `<img class="image" src="${quiz_frida_kahlo.questions[currentQuestionIndex].image}" alt="illustration"/>`
->>>>>>> 560ed5ee22a12811b31d8220ff7e18e178bd5652
-    //affiche les boutons dans l'ordre aléatoire
+    shuffleArray(quiz_frida_kahlo.questions[currentQuestionIndex].options);// mélange le tableau des options
     shuffleArray(quiz_frida_kahlo.questions[currentQuestionIndex].options);// mélange le tableau des options
     for (const item of quiz_frida_kahlo.questions[currentQuestionIndex].options) {
         options.innerHTML += `<button class="answerButtons">${item}</button>`;//on intègre les boutons dans le conteneur de boutons
@@ -81,29 +60,9 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
             };
         });
     };
-<<<<<<< HEAD
-    updateProgressBar();
-   
+    updateProgressBar(quiz_frida_kahlo.questions,currentQuestionIndex);   
 };
 loadQuestion(); //on execute la fonction
-
-
-function updateProgressBar() {
-    const totalQuestions = quiz_frida_kahlo.questions.length;
-    const progressPercent = ((currentQuestionIndex + 1) / totalQuestions) * 100;
-
-    const progressBar = document.getElementById("progress-bar");
-    const progressText = document.getElementById("progress-text");
-    
-    if (progressBar) {
-        progressBar.style.width = progressPercent + "%";
-    }
-    
-    if (progressText) {
-        progressText.textContent = `Question ${currentQuestionIndex + 1} sur ${totalQuestions}`;
-    }
-}
- 
 
 window.onload = function() {
   
@@ -118,14 +77,6 @@ window.onload = function() {
     }
   }, 1000);
 }
-
-
-
-=======
-    updateProgressBar(quiz_frida_kahlo.questions,currentQuestionIndex);
-};
-loadQuestion(); //appeler la fonction afin d'afficher le quiz dès le début 
->>>>>>> 560ed5ee22a12811b31d8220ff7e18e178bd5652
 //bouton "suivant"
 nextButton.addEventListener("click", () => {
     currentQuestionIndex += 1; //l'action click ajoute 1 à la page actuelle
