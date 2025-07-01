@@ -14,15 +14,22 @@ const tracker = document.querySelector("#tracker");
 const progressTracker = document.querySelector("#progressTracker");
 const illustrationContainer = document.querySelector("#illustrationContainer");
 const comment = document.querySelector("#comment");
+const timerElement = document.getElementById("timer");
 
 //parametres de base de nos fonctions
 let currentQuestionIndex = 0; //permet d'afficher la question et les boutons 0 au round 0
 let score = 0;
+let sec = 5;
+
+
+
 
 // showScore.innerHTML = `${score}/${quiz_frida_kahlo.questions.length}`;
 //1. déclaration des fonctions
 //a. afficher les réponses
 function loadQuestion() { //Fonction pour afficher une question basée sur l'index actuel
+
+
     questionText.innerHTML = `<h2>${quiz_frida_kahlo.questions[currentQuestionIndex].text}</h2>`; //on fait apparaitre l'intitulé de question, variant à chaque currentQuestionIndex
     options.innerHTML = '';// Vider le conteneur des options
     illustrationContainer.innerHTML = `<img class="image" src="${quiz_frida_kahlo.questions[currentQuestionIndex].image}" alt="illustration"/>`
@@ -33,6 +40,8 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
             [array[i], array[j]] = [array[j], array[i]]; //échange les éléments
         }
     }
+
+    
     shuffleArray(quiz_frida_kahlo.questions[currentQuestionIndex].options);// mélange le tableau des options
 
     //affiche les boutons dans l'ordre aléatoire
@@ -67,8 +76,11 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
             };
         });
     };
-      updateProgressBar();
+    updateProgressBar();
+   
 };
+loadQuestion(); //on execute la fonction
+
 
 function updateProgressBar() {
     const totalQuestions = quiz_frida_kahlo.questions.length;
@@ -87,8 +99,19 @@ function updateProgressBar() {
 }
  
 
-loadQuestion(); //on execute la fonction
+window.onload = function() {
+  
+  setInterval(function() {
+    document.getElementById("timer").innerHTML = sec;
+    sec--;
 
+    if (sec < 0) {
+    answerButtons.disabled = true;
+    nextButton.disabled = false;
+    document.querySelector("#timer").style.display = "none";
+    }
+  }, 1000);
+}
 
 
 
@@ -96,6 +119,7 @@ loadQuestion(); //on execute la fonction
 nextButton.addEventListener("click", () => {
     currentQuestionIndex += 1; //l'action click ajoute 1 à la page actuelle
     loadQuestion(); //on appelle la fonction pour l'executer sinon l'affichage s'actualise pas
+    sec = 15;
     if (currentQuestionIndex === quiz_frida_kahlo.questions.length - 1) {
         nextButton.style.display = "none";
     }; //si le compteur atteint la dernière page, le bouton "suivant" disparait
