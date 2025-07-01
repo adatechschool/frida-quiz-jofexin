@@ -59,28 +59,28 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
         });
     };
     updateProgressBar(quiz_frida_kahlo.questions,currentQuestionIndex);
+    //ci-dessous le setup d'un timer 
+    const startTimer = setInterval(() =>{
+    document.getElementById("timer").innerHTML = sec;
+    sec--;
+    if (sec < 0) {
+        clearInterval(startTimer);
+         for (const button of answerButtons) {
+                    if (button.innerHTML === quiz_frida_kahlo.questions[currentQuestionIndex].correct_answer) {
+                        button.style.backgroundColor = "#4caf50";
+                        nextButton.disabled=false;
+                    };
+                };
+        }
+    }, 1000);
 };
 loadQuestion(); //on execute la fonction
  
-
-window.onload = function() {
-  
-  setInterval(function() {
-    document.getElementById("timer").innerHTML = sec;
-    sec--;
-
-    if (sec < 0) {
-    answerButtons.disabled = true;
-    nextButton.disabled = false;
-    document.querySelector("#timer").style.display = "none";
-    }
-  }, 1000);
-}
 //bouton "suivant"
 nextButton.addEventListener("click", () => {
     currentQuestionIndex += 1; //l'action click ajoute 1 à la page actuelle
     loadQuestion(); //on appelle la fonction pour l'executer sinon l'affichage s'actualise pas
-    sec = 15;
+    sec = 5;
     if (currentQuestionIndex === quiz_frida_kahlo.questions.length - 1) {
         nextButton.style.display = "none";
     }; //si le compteur atteint la dernière page, le bouton "suivant" disparait
