@@ -6,6 +6,7 @@ body {
     height: 100%;
     width: 100%;
 }
+
 #backgroundImage {
     position: fixed;
     left: 0;
@@ -20,6 +21,7 @@ body {
     width: 105%;
     filter: blur(1.5px);
 }
+
 #frontPage {
     margin-top: 5%;
     display: flex;
@@ -32,43 +34,50 @@ body {
     z-index: 2;
     padding: 25px;
     align-self: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+
 #quizContainer {
     display: block;
     text-align: center;
     z-index: 3;
     height: 100%;
     width: 50%;
+    min-width: 300px;
 }
-.answerButtons{
-    width:300px;
-    height : 30px;
+
+.answerButtons {
+    width: 300px;
+    height: 30px;
     border: 0px;
     background-color: lightgray;
-    border-radius: 5px;
+    border-radius: 25px;
     padding: 3px 5px;
     align-self: center;
 }
 
 #progress-container {
-  width: 100%;
-  background-color: #e0e0e0;
-  height: 20px;
-  border-radius: 10px;
-  margin: 20px 0;
+    width: 300px;
+    background-color: #e0e0e0;
+    height: 10px;
+    border-radius: 25px;
+    margin: 20px 0;
 }
 
 #progress-bar {
-  height: 100%;
-  width: 0%;
-  background-color: #4caf50;
-  border-radius: 10px;
-  transition: width 0.3s ease;
+    height: 100%;
+    width: 0%;
+    background-color: #4caf50;
+    border-radius: 25px;
+    transition: width 0.3s ease;
 }
-.answerButtons:hover:enabled{
+
+.answerButtons:hover:enabled {
     background-color: black;
     color: lightgrey;
 }
+
 #illustrationContainer {
     display: flex;
     z-index: 3;
@@ -76,63 +85,68 @@ body {
     width: 50%;
     align-items: center;
     justify-content: center;
-
+    min-width: 300px;
 }
+
 .image {
     width: 80%;
     height: 80%;
     object-fit: cover;
     border-radius: 15px;
 }
-.options{
+
+.options {
     display: flex;
     flex-direction: column;
-    gap: 10px; 
+    gap: 10px;
     margin-top: 20px;
     padding: 10px 10px;
     width: 134px;
     margin: auto;
-    
 }
-/* ci d-ssous le design pour finalPage */
+
 #finalPage {
-    display: none; /*display à défaut none, quand on veut l'afficher, on le repasse à flex dans le code js*/
-    flex-direction: column; /*permet de placer les éléments de la div verticalement */
-    align-items: center; /*centrer les éléments horizontalement */
-    justify-content: center; /*centrer les éléments verticalement */
-    text-align: center; /*centrer les textes*/
-    position: fixed; /*fixer la div dans l'écran, même en scrollant*/
+    display: none;
+    text-align: center;
     z-index: 3;
     height: 100%;
-    width: 100%; /*occupe la fenêtre 100% */
-    top: 0;
-    left: 0;
-}
-
-#finalPage #showScore {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #4caf50;
-}
-
-#finalPage #comment {
-    font-style: italic;
+    width: 100%;
 }
 
 #scoreButton {
     display: none;
 }
 
-#replayButton {
-    padding: 0.75rem 1.5rem; /*distance entre le texte et les bords du bouton */
-    font-size: 1rem;
-    background-color: #4caf50; /*couleur du bouton*/
-    color: white; /*couleur du texte*/
-    border: none;
-    border-radius: 8px;
-    margin-top: 3rem; /*la distance entre mon bouton et les éléments au dessus */
+
+@media (max-width: 768px) {
+    #frontPage {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        padding: 15px;
+    }
+
+    #quizContainer,
+    #illustrationContainer {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    #illustrationContainer {
+        order: -1;
+    }
 }
 
-#replayButton:hover {
-    background-color: black;
+@media (max-width: 480px) {
+    #frontPage {
+        margin-top: 2%;
+        padding: 10px;
+    }
+
+    .answerButtons,
+    #progress-container {
+        width: 90%;
+        margin: 10px auto;
+    }
 }
