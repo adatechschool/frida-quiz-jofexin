@@ -1,5 +1,7 @@
 import { quiz_frida_kahlo } from './questions.js'; //nous avons relié ce fichier avec questions.js
 import { commentaires } from './comments.js';
+import { updateProgressBar } from './progress.js';
+import { shuffleArray } from './shuffleArray.js';
 
 //selection des elements HTML //on fait correspondre les variables à leurs emplacements HTML
 const questionText = document.querySelector("#questionText");
@@ -10,8 +12,6 @@ const showScore = document.querySelector("#showScore");
 const replayButton = document.querySelector("#replayButton");
 const finalPage = document.querySelector("#finalPage");
 const quizContainer = document.querySelector("#quizContainer");
-const tracker = document.querySelector("#tracker");
-const progressTracker = document.querySelector("#progressTracker");
 const illustrationContainer = document.querySelector("#illustrationContainer");
 const comment = document.querySelector("#comment");
 const timerElement = document.getElementById("timer");
@@ -24,10 +24,10 @@ let sec = 5;
 
 
 
-// showScore.innerHTML = `${score}/${quiz_frida_kahlo.questions.length}`;
 //1. déclaration des fonctions
 //a. afficher les réponses
 function loadQuestion() { //Fonction pour afficher une question basée sur l'index actuel
+<<<<<<< HEAD
 
 
     questionText.innerHTML = `<h2>${quiz_frida_kahlo.questions[currentQuestionIndex].text}</h2>`; //on fait apparaitre l'intitulé de question, variant à chaque currentQuestionIndex
@@ -44,11 +44,17 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
     
     shuffleArray(quiz_frida_kahlo.questions[currentQuestionIndex].options);// mélange le tableau des options
 
+=======
+    questionText.innerHTML = `<h3>${quiz_frida_kahlo.questions[currentQuestionIndex].text}</h3>`; //on fait apparaitre l'intitulé de question, variant à chaque currentQuestionIndex
+    options.innerHTML = '';// Vider le conteneur des options
+    illustrationContainer.innerHTML = `<img class="image" src="${quiz_frida_kahlo.questions[currentQuestionIndex].image}" alt="illustration"/>`
+>>>>>>> 560ed5ee22a12811b31d8220ff7e18e178bd5652
     //affiche les boutons dans l'ordre aléatoire
+    shuffleArray(quiz_frida_kahlo.questions[currentQuestionIndex].options);// mélange le tableau des options
     for (const item of quiz_frida_kahlo.questions[currentQuestionIndex].options) {
         options.innerHTML += `<button class="answerButtons">${item}</button>`;//on intègre les boutons dans le conteneur de boutons
-    } //la boucle fait apparaitre 4 éléments, à chaque currentQuestionIndex
-
+    } ;//la boucle fait apparaitre 4 éléments, à chaque currentQuestionIndex
+    
     //a2. on modifie l'affichage en fonction de la réponse choisie.
     const answerButtons = document.querySelectorAll(".answerButtons");
     nextButton.disabled = true;
@@ -65,7 +71,6 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
             if (event.target.innerHTML === quiz_frida_kahlo.questions[currentQuestionIndex].correct_answer) {
                 clickedButton.style.backgroundColor = "#4caf50";
                 score += 1;
-                //showScore.innerHTML = `${score}/${quiz_frida_kahlo.questions.length}`;
             } else {
                 clickedButton.style.backgroundColor = "#e0beb5";
                 for (const button of answerButtons) {
@@ -76,6 +81,7 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
             };
         });
     };
+<<<<<<< HEAD
     updateProgressBar();
    
 };
@@ -115,6 +121,11 @@ window.onload = function() {
 
 
 
+=======
+    updateProgressBar(quiz_frida_kahlo.questions,currentQuestionIndex);
+};
+loadQuestion(); //appeler la fonction afin d'afficher le quiz dès le début 
+>>>>>>> 560ed5ee22a12811b31d8220ff7e18e178bd5652
 //bouton "suivant"
 nextButton.addEventListener("click", () => {
     currentQuestionIndex += 1; //l'action click ajoute 1 à la page actuelle
@@ -128,7 +139,7 @@ nextButton.addEventListener("click", () => {
 //bouton de score
 scoreButton.addEventListener("click", () => {
     quizContainer.style.display = "none";
-    finalPage.style.display = "inline";
+    finalPage.style.display = "flex";
     illustrationContainer.style.display = "none";
     showScore.innerHTML = `${Math.round(score * 100 / quiz_frida_kahlo.questions.length)}%`; //affiche les %ages de réussite dans finalPage
     if (Math.round(score * 6 / quiz_frida_kahlo.questions.length) <= 2) {
