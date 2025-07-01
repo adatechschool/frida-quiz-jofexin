@@ -10,20 +10,18 @@ const showScore = document.querySelector("#showScore");
 const replayButton = document.querySelector("#replayButton");
 const finalPage = document.querySelector("#finalPage");
 const quizContainer = document.querySelector("#quizContainer");
-const tracker = document.querySelector("#tracker");
-const progressTracker = document.querySelector("#progressTracker");
 const illustrationContainer = document.querySelector("#illustrationContainer");
 const comment = document.querySelector("#comment");
 
 //parametres de base de nos fonctions
-let currentQuestionIndex = 0; //permet d'afficher la question et les boutons 0 au round 0
+let currentQuestionIndex = 7; //permet d'afficher la question et les boutons 0 au round 0
 let score = 0;
 
 // showScore.innerHTML = `${score}/${quiz_frida_kahlo.questions.length}`;
 //1. déclaration des fonctions
 //a. afficher les réponses
 function loadQuestion() { //Fonction pour afficher une question basée sur l'index actuel
-    questionText.innerHTML = `<h2>${quiz_frida_kahlo.questions[currentQuestionIndex].text}</h2>`; //on fait apparaitre l'intitulé de question, variant à chaque currentQuestionIndex
+    questionText.innerHTML = `<h3>${quiz_frida_kahlo.questions[currentQuestionIndex].text}</h3>`; //on fait apparaitre l'intitulé de question, variant à chaque currentQuestionIndex
     options.innerHTML = '';// Vider le conteneur des options
     illustrationContainer.innerHTML = `<img class="image" src="${quiz_frida_kahlo.questions[currentQuestionIndex].image}" alt="illustration"/>`
     //fonction pour mélanger le tableau des réponses
@@ -104,7 +102,7 @@ nextButton.addEventListener("click", () => {
 //bouton de score
 scoreButton.addEventListener("click", () => {
     quizContainer.style.display = "none";
-    finalPage.style.display = "inline";
+    finalPage.style.display = "flex";
     illustrationContainer.style.display = "none";
     showScore.innerHTML = `${Math.round(score * 100 / quiz_frida_kahlo.questions.length)}%`; //affiche les %ages de réussite dans finalPage
     if (Math.round(score * 6 / quiz_frida_kahlo.questions.length) <= 2) {
