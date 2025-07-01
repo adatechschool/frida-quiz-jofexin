@@ -94,16 +94,17 @@ body {
     margin: auto;
     
 }
+/* ci d-ssous le design pour finalPage */
 #finalPage {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: fixed;
+    display: none; /*display à défaut none, quand on veut l'afficher, on le repasse à flex dans le code js*/
+    flex-direction: column; /*permet de placer les éléments de la div verticalement */
+    align-items: center; /*centrer les éléments horizontalement */
+    justify-content: center; /*centrer les éléments verticalement */
+    text-align: center; /*centrer les textes*/
+    position: fixed; /*fixer la div dans l'écran, même en scrollant*/
     z-index: 3;
     height: 100%;
-    width: 100%;
+    width: 100%; /*occupe la fenêtre 100% */
     top: 0;
     left: 0;
 }
@@ -123,15 +124,13 @@ body {
 }
 
 #replayButton {
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1.5rem; /*distance entre le texte et les bords du bouton */
     font-size: 1rem;
-    background-color: #4caf50;
-    color: white;
+    background-color: #4caf50; /*couleur du bouton*/
+    color: white; /*couleur du texte*/
     border: none;
     border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 2rem; 
+    margin-top: 3rem; /*la distance entre mon bouton et les éléments au dessus */
 }
 
 #replayButton:hover {
