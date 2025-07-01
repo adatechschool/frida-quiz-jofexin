@@ -33,9 +33,7 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
             [array[i], array[j]] = [array[j], array[i]]; //échange les éléments
         }
     }
-
     shuffleArray(quiz_frida_kahlo.questions[currentQuestionIndex].options);// mélange le tableau des options
-
 
     //affiche les boutons dans l'ordre aléatoire
     for (const item of quiz_frida_kahlo.questions[currentQuestionIndex].options) {
