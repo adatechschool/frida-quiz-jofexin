@@ -88,7 +88,7 @@ button:hover:enabled {
 
 #progressContainer {
     width: 100%;
-    background-color: #e0e0e0;
+    background-color: lightgray;
     height: 10px;
     border-radius: 25px;
     margin: auto;
