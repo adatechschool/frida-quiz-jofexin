@@ -56,7 +56,7 @@ export const quiz_frida_kahlo = {
             image: "pictures/question5.jpeg"
         },
         {
-            text: "Si elle souffrit beaucoup de l'infidélité de Diego avec sa propre sœur, Frida eu, elle aussi, des aventures. On lui attribue une aventure avec Léon Trotski et ... ?",
+            text: "Durant sa relation avec Diego Rivera, Frida a eu des aventures. On lui attribue une aventure avec ... ?",
             options: [
                 "Pablo Picasso",
                 "André Breton",

@@ -56,6 +56,19 @@ body {
     padding: 3px 5px;
     align-self: center;
 }
+#nextButton {
+    padding: 0.5rem 1rem;
+    background-color: lightgray;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+#nextButton:hover {
+    background-color: black;
+    color:white
+}
 
 #progress-container {
     width: 100%;
