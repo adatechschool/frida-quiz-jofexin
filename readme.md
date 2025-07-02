@@ -32,7 +32,11 @@ On a actualisé le style des boutons\
 On a affiché les boutons de réponse de manière aléatoire\
 On a modifié le style des boutons activés lorsque la souris les survole
 ## 01/07/2025
-On a amélioré la mise en page de la finalPage
-On a amélioré la structure CSS
-On a initié un timer, tjs en cours
-On a séparé les fonctions shuffleArray et progressBar dans les fichiers séparés
+On a amélioré la mise en page de la finalPage\
+On a amélioré la structure CSS\
+On a initié un timer, tjs en cours\
+On a séparé les fonctions shuffleArray et progressBar dans les fichiers séparés\
+## 02/07/2025
+On a relu et redétaillé les fonctionnalités de game.js\
+On a optimisé le code game.js\
+Le style des boutons a été modifié pour qu'ils adoptent tous le même comportement avec hover et desactivated

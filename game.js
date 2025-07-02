@@ -84,7 +84,6 @@ nextButton.addEventListener("click", () => {
     if (currentQuestionIndex === quiz_frida_kahlo.questions.length - 1) {
         nextButton.style.display = "none";
         scoreButton.style.display = "inline";
-
     }; //si le compteur atteint la dernière page, le bouton "suivant" disparait
 });
 
@@ -115,5 +114,3 @@ replayButton.addEventListener("click", () => {
     loadQuestion();
     nextButton.style.display = "inline";
 });
-
-

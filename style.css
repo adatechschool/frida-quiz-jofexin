@@ -50,9 +50,8 @@ body {
 button {
     width: 300px;
     height: 30px;
-    border: 0px;
-    background-color:goldenrod;
-    color: white;
+    background-color: lightgray;
+    color: black;
     border-radius: 25px;
     padding: 3px 5px;
     align-self: center;
@@ -60,20 +59,24 @@ button {
     padding: 0.5rem 1rem;
 }
 
-button:disabled{
+button:disabled {
     background-color: lightgrey;
     color: black;
 }
 
-button:disabled:hover{
+button:disabled:hover {
     cursor: not-allowed;
 }
 
 button:hover:enabled {
     transition: background-color 0.3s ease;
-    color: black;
-    background-color: lightgoldenrodyellow;
+    color: white;
+    background-color: black;
     cursor: pointer;
+}
+
+#nextButton, #scoreButton{
+    width: 150px;
 }
 
 #progress-container {
@@ -93,8 +96,8 @@ button:hover:enabled {
 }
 
 #timer {
-      font-size: 20px;
-      color: green;
+    font-size: 20px;
+    color: green;
 }
 
 #illustrationContainer {
@@ -134,25 +137,22 @@ button:hover:enabled {
     z-index: 3;
     height: 100%;
     width: 100%;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
 }
+
 #finalPage #showScore {
     font-size: 2rem;
     font-weight: bold;
     color: #4caf50;
 }
+
 #finalPage #comment {
     font-style: italic;
 }
 
 #scoreButton {
     display: none;
-    padding: 0.5rem 1rem;
-    background-color: lightgray;
-    color: black;
-    border: none;
-    border-radius: 8px;
 }
 
 @media (max-width: 768px) {
