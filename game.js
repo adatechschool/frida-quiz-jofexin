@@ -115,6 +115,6 @@ replayButton.addEventListener("click", () => {
     currentQuestionIndex = 0;
     score = 0;
     loadQuestion();
-    updateProgressBar(quiz_frida_kahlo.questions, -1);
+    updateProgressBar(quiz_frida_kahlo.questions,-1);
     nextButton.style.display = "inline";
 });
