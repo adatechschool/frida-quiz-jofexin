@@ -43,8 +43,7 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
             };
             nextButton.disabled = false; //on réactive le bouton suivant après un click sur les réponse
             if (currentQuestionIndex === quiz_frida_kahlo.questions.length - 1) {
-                scoreButton.style.display = "inline";
-
+                scoreButton.disabled = false;
             }
             if (event.target.innerHTML === quiz_frida_kahlo.questions[currentQuestionIndex].correct_answer) {
                 button.style.backgroundColor = "#4caf50";
@@ -84,14 +83,16 @@ nextButton.addEventListener("click", () => {
     // sec = 5;
     if (currentQuestionIndex === quiz_frida_kahlo.questions.length - 1) {
         nextButton.style.display = "none";
+        scoreButton.style.display = "inline";
+
     }; //si le compteur atteint la dernière page, le bouton "suivant" disparait
 });
 
 //bouton de score
 scoreButton.addEventListener("click", () => {
     quizContainer.style.display = "none";
-    finalPage.style.display = "flex";
     illustrationContainer.style.display = "none";
+    finalPage.style.display = "flex";
     showScore.innerHTML = `${Math.round(score * 100 / quiz_frida_kahlo.questions.length)}%`; //affiche les %ages de réussite dans finalPage
     if (Math.round(score * 6 / quiz_frida_kahlo.questions.length) <= 2) {
         comment.innerHTML = commentaires.comments[0];
@@ -109,7 +110,7 @@ replayButton.addEventListener("click", () => {
     quizContainer.style.display = "block";
     illustrationContainer.style.display = "flex";
     finalPage.style.display = "none";
-    currentQuestionIndex = 0; // /!\ à déplacer dans replayButton
+    currentQuestionIndex = 0;
     score = 0;
     loadQuestion();
     nextButton.style.display = "inline";

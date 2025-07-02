@@ -9,7 +9,7 @@ export const quiz_frida_kahlo = {
                 "Aucune de ces réponses"
             ],
             correct_answer: "Aucune de ces réponses",
-            image: "pictures/question1.jpeg"
+            image: "pictures/question1.jpeg" 
         },
         {
             text: "Quel est le nom complet de Frida Kahlo ?",
