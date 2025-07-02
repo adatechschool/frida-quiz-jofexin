@@ -75,19 +75,20 @@ button:hover:enabled {
     cursor: pointer;
 }
 
-#nextButton, #scoreButton{
+#nextButton,
+#scoreButton {
     width: 150px;
 }
 
-#progress-container {
+#progressContainer {
     width: 100%;
     background-color: #e0e0e0;
     height: 10px;
     border-radius: 25px;
-    margin: 20px 0;
+    margin: auto;
 }
 
-#progress-bar {
+#progressBar {
     height: 100%;
     width: 0%;
     background-color: #4caf50;
@@ -182,7 +183,7 @@ button:hover:enabled {
     }
 
     .answerButtons,
-    #progress-container {
+    #progressContainer {
         width: 90%;
         margin: 10px auto;
     }
