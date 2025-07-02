@@ -20,7 +20,6 @@ const comment = document.querySelector("#comment");
 //parametres de base de nos fonctions
 let currentQuestionIndex = 0; //permet d'afficher la question et les boutons 0 au round 0
 let score = 0;
-// let sec = 5; 
 
 //afficher les réponses
 function loadQuestion() { //Fonction pour afficher une question basée sur l'index actuel
@@ -60,20 +59,6 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
             };
         });
     };
-    //ci-dessous le setup d'un timer 
-    // const startTimer = setInterval(() =>{
-    // document.getElementById("timer").innerHTML = sec;
-    // sec--;
-    // if (sec < 0) {
-    //     clearInterval(startTimer);
-    //      for (const button of answerButtons) {
-    //                 if (button.innerHTML === quiz_frida_kahlo.questions[currentQuestionIndex].correct_answer) {
-    //                     button.style.backgroundColor = "#4caf50";
-    //                     nextButton.disabled=false;
-    //                 };
-    //             };
-    //     }
-    // }, 1000);
 };
 loadQuestion(); //on execute la fonction
 
@@ -81,7 +66,6 @@ loadQuestion(); //on execute la fonction
 nextButton.addEventListener("click", () => {
     currentQuestionIndex += 1; //l'action click ajoute 1 à la page actuelle
     loadQuestion(); //on appelle la fonction pour l'executer sinon l'affichage s'actualise pas
-    // sec = 5;
     if (currentQuestionIndex === quiz_frida_kahlo.questions.length - 1) {
         nextButton.style.display = "none";
         scoreButton.style.display = "inline";
@@ -107,14 +91,14 @@ scoreButton.addEventListener("click", () => {
 });
 //bouton rejouer
 replayButton.addEventListener("click", () => {
+    finalPage.style.display = "none";
     scoreButton.style.display = "none";
     quizContainer.style.display = "block";
+    nextButton.style.display = "inline";
     illustrationContainer.style.display = "flex";
     progressContainer.style.display = "inline";
-    finalPage.style.display = "none";
     currentQuestionIndex = 0;
     score = 0;
     loadQuestion();
     updateProgressBar(quiz_frida_kahlo.questions,-1);
-    nextButton.style.display = "inline";
 });
