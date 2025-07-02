@@ -44,6 +44,7 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
             nextButton.disabled = false; //on réactive le bouton suivant après un click sur les réponse
             if (currentQuestionIndex === quiz_frida_kahlo.questions.length - 1) {
                 scoreButton.style.display = "inline";
+
             }
             if (event.target.innerHTML === quiz_frida_kahlo.questions[currentQuestionIndex].correct_answer) {
                 button.style.backgroundColor = "#4caf50";

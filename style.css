@@ -65,10 +65,10 @@ body {
     transition: background-color 0.3s ease;
 }
 
-#nextButton:hover {
+/*#nextButton:hover {
     background-color: black;
     color:white
-}
+}*/
 
 #progress-container {
     width: 100%;
@@ -86,7 +86,7 @@ body {
     transition: width 0.3s ease;
 }
 
-.answerButtons:hover:enabled {
+button:hover:enabled {
     background-color: black;
     color: lightgrey;
 }
@@ -146,6 +146,12 @@ body {
 
 #scoreButton {
     display: none;
+    padding: 0.5rem 1rem;
+    background-color: lightgray;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
 }
 
 #replayButton {
