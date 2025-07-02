@@ -41,4 +41,5 @@ On a relu et redétaillé les fonctionnalités de game.js\
 On a optimisé le code game.js\
 Le style des boutons a été modifié pour qu'ils adoptent tous le même comportement avec hover et desactivated\
 Modification de l'emplacement de progressContainer et progression qui s'active au clique d'une réponse\
+Modification de la police du titre\
 On a trié les lignes de codes obsolètes, ainsi que des commentaires inutiles
