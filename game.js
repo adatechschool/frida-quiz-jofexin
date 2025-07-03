@@ -18,9 +18,10 @@ const progressContainer = document.querySelector("#progressContainer")
 const comment = document.querySelector("#comment");
 
 //parametres de base de nos fonctions
-let currentQuestionIndex = 0; //permet d'afficher la question et les boutons 0 au round 0
+let currentQuestionIndex = 7; //permet d'afficher la question et les boutons 0 au round 0
 let score = 0;
-
+let sec = 5; 
+let startTimer
 //afficher les réponses
 function loadQuestion() { //Fonction pour afficher une question basée sur l'index actuel
     questionText.innerHTML = `<h3>${quiz_frida_kahlo.questions[currentQuestionIndex].text}</h3>`; //on fait apparaitre l'intitulé de question, variant à chaque currentQuestionIndex
@@ -30,14 +31,17 @@ function loadQuestion() { //Fonction pour afficher une question basée sur l'ind
     shuffleArray(quiz_frida_kahlo.questions[currentQuestionIndex].options);
     for (const item of quiz_frida_kahlo.questions[currentQuestionIndex].options) {
         options.innerHTML += `<button class="answerButtons">${item}</button>`;//on intègre les boutons dans le conteneur de boutons
-    };//la boucle fait apparaitre 4 éléments, à chaque currentQuestionIndex
-
+    } ;//la boucle fait apparaitre 4 éléments, à chaque currentQuestionIndex
+    clearInterval(startTimer);
+    launchtimer();
     //on modifie l'affichage en fonction de la réponse choisie.
     const answerButtons = document.querySelectorAll(".answerButtons");
     nextButton.disabled = true;
 
     for (const button of answerButtons) { //on crée une boucle qui isole les options pour initier l'eventlistener
         button.addEventListener("click", (event) => {
+            
+
             for (const button of answerButtons) {
                 button.disabled = true;
                 updateProgressBar(quiz_frida_kahlo.questions, currentQuestionIndex);
@@ -64,7 +68,11 @@ loadQuestion(); //on execute la fonction
 
 //bouton "suivant"
 nextButton.addEventListener("click", () => {
+    document.getElementById("timer").innerHTML =''
+    clearInterval(startTimer);
     currentQuestionIndex += 1; //l'action click ajoute 1 à la page actuelle
+    launchtimer();
+   
     loadQuestion(); //on appelle la fonction pour l'executer sinon l'affichage s'actualise pas
     if (currentQuestionIndex === quiz_frida_kahlo.questions.length - 1) {
         nextButton.style.display = "none";
@@ -99,6 +107,26 @@ replayButton.addEventListener("click", () => {
     progressContainer.style.display = "inline";
     currentQuestionIndex = 0;
     score = 0;
+    sec =5;
+    document.getElementById("timer").innerHTML =''
     loadQuestion();
-    updateProgressBar(quiz_frida_kahlo.questions,-1);
+    nextButton.style.display = "inline";
+    updateProgressBar(quiz_frida_kahlo.questions,-1)
 });
+function launchtimer(){
+    sec=5
+    startTimer = setInterval(() =>{
+        document.getElementById("timer").innerHTML = sec;
+        if (sec <1) {
+            clearInterval(startTimer);
+            nextButton.disabled=false;
+            const answerButtons = document.querySelectorAll(".answerButtons");
+            for (const button of answerButtons) {
+                button.disabled=true;
+                if (button.innerHTML === quiz_frida_kahlo.questions[currentQuestionIndex].correct_answer) {
+                    button.style.backgroundColor = "#4caf50";
+                    };
+                };
+            }sec--;
+    }, 1000);
+};
