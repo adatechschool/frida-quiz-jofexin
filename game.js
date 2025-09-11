@@ -18,7 +18,7 @@ const progressContainer = document.querySelector("#progressContainer")
 const comment = document.querySelector("#comment");
 
 //parametres de base de nos fonctions
-let currentQuestionIndex = 7; //permet d'afficher la question et les boutons 0 au round 0
+let currentQuestionIndex = 1; //permet d'afficher la question et les boutons 0 au round 0
 let score = 0;
 let sec = 5; 
 let startTimer
