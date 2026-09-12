@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz Frida Kahlo</title>
+    <link href="https://fonts.cdnfonts.com/css/moirt-personal-use" rel="stylesheet">
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/moirt-personal-use');
+    </style>
+</head>
+
+<body>
+    <div id="backgroundImage"></div>
+    <div id="frontPage">
+        <div id="quizContainer">
+            <h1>Quiz Frida Kahlo</h1>
+            <div id="questionText"></div>
+            <div class="options"></div>
+            <div class="answserButtons"></div>
+            <button id="nextButton">Suivant</button>
+            <button id="scoreButton" disabled>Afficher le score</button>
+            <div id="timer"></div>
+        </div>
+
+        <div id="illustrationContainer"></div>
+
+
+        <div id="progressContainer">
+            <div id="progressBar"></div>
+        </div>
+
+        <div id="finalPage">
+            <h2>Voici votre score : </h2>
+            <span id="showScore"></span>
+            <h3 id="comment"></h3>
+            <button id="replayButton">Rejouer</button>
+        </div>
+    </div>
+    <script type="module" src="game.js"></script>
+</body>
+
+</html>
